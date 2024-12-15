@@ -19,6 +19,8 @@ z = ++x + 20; //27, так как значение ++x равно x+1, то ес
 
 ASSERT
 
+#include <assert.h>
+
 Пример из модуля celsia.c
 
 assert(32 == faren(0));
@@ -31,3 +33,10 @@ assert(33.8 == faren(1));
 $ ./a.out
 a.out: celsia.c:14: main: Assertion '33.8 == faren(1)' failed
 Aborted (core dumped)
+
+НО если запустить faren(1) то ответ будет 33.80
+
+Assert прошел потому что дробные числа вычисляются и хранятся с некоторой погрешностью
+
+Дробные числа a и b сравнивают как |a-b| < EPS, где EPS - это маленькое число
+Пример в EPScelsia
