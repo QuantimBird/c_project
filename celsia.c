@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 
 float faren(int cels)
 {
@@ -9,6 +10,8 @@ int main(){
     int cel;
     int f;
 
+
+    assert(33.8 == faren(1));
 
     scanf("%d", &cel);
     f = faren(cel);
